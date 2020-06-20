@@ -1,0 +1,24 @@
+import java.io.*; 
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class StringManipulation {
+   
+
+
+  public static void main(String args[])
+  {
+
+  
+        // Creating a Stream of Strings 
+        List<String> words = Arrays.asList("apple", "art", 
+                                          "games", "aadya","arm","ashu"); 
+        
+        
+        List <String> result = words.stream().filter(word->word.length()==3)
+
+                .collect(Collectors.toList());
+        System.out.println(result);
+  }
+}
+        

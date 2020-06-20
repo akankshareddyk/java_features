@@ -1,0 +1,29 @@
+package java_8_features;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+public class palindrime {
+     public static void main(String args[])
+  {
+ 
+      String[] arra= new String[5];
+ 
+        arra[0]=("dad");
+        arra[1]=("madam");
+        arra[2]=("level");
+        arra[3]=("check");
+        arra[4]=("test");
+ Object[]  palindrome =checkpalindrome(arra);
+ for(int i=0;i<palindrome.length;i++){
+     System.out.println(palindrome[i]);
+ }
+  }
+ private static Object[] checkpalindrome(String[] arra) {
+     return Arrays.asList(arra).stream().map(mapper->{
+         String reversedString = new StringBuilder(mapper).reverse().toString();
+      return reversedString.equalsIgnoreCase(mapper)?mapper:"Its not a apllindrome";
+     }).collect(Collectors.toList()).toArray();
+            
+     }
+ }
